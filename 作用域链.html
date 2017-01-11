@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //预解析
+    //1、
+	   var name1 = "zs";
+	   function fn() {
+	       name1 = "ls";
+	       console.log(name1);//ls
+	   }
+	   fn();
+	   console.log(name1);//ls
+
+
+
+
+
+	   2、
+	  var name1 = "zs";
+	   function fn() {
+	       var name1 = "ls";
+	       console.log(name1);//ls
+
+	       console.log(num3);//报错
+
+	   }
+	   fn();
+	   console.log(name1);//zs
+
+
+
+
+	   
+	   //3、
+	   var name1 = "zs";
+	   function outer(){
+	       var name2 = "ls";
+	       console.log(name1);//zs
+	       console.log(name2);//ls
+	       function inner() {
+	           var name3 = "ww";
+	           console.log(name1);//zs
+	           console.log(name2);//ls
+	           console.log(name3);//ww
+	       }
+	       inner();
+	   }
+	   outer();
+	   console.log(name1)//zs
+
+
+
+	   
+	  // 4、
+	   var color = "red";
+	   function outer() {
+	       var anotherColor = "blue";
+	       function inner() {
+	           var tmpColor = color;
+	           color = anotherColor;
+	           anotherColor = tmpColor;
+	           console.log(anotherColor);//red
+	       }
+	       inner();
+	   }
+	   outer();
+	   console.log(color);//blue
+
+	   /*
+	   转化为
+	   var tempColor = red;
+	   color = blue;
+	   anotherColor = red;*/
+
+
+
+	   //4、
+	    var name1 = "zs";
+	    function f2() {
+	        var name1 = "ls";
+	        name2 = "ww";//不推荐这样加一个变量
+	        console.log(name1);//ls
+	        console.log(name2);//ww
+	    }
+	    f2();
+	    console.log(name1);//zs
+	    console.log(name2);//ww
+</script>
+</body>
+</html>

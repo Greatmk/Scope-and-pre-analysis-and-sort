@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    	<script>
+    		console.log(num);//undefined
+    		var num = 3 ; 
+    		console.log(num);//3
+
+    		//预解析：js解释器在执行js代码的时候会有一个预解析的过程。它首先会把变量和函数的声明提升到当前作用域的顶部，然后再开始执行代码。
+    		/*
+    		 var num;
+    		 console.log(num);
+	    	 num = 3 ; 
+	    	 console.log(num);
+    		 */
+    		
+    		console.log(a);
+			var a = 1;
+			function a() {
+			    console.log("aaaaa");
+			}
+			console.log(a);
+
+			/*
+			function a() {
+			    console.log("aaaaa");
+			}
+			console.log(a);
+			var a = 1;
+			
+			console.log(a);
+			
+			 */
+    	</script>
+    </body>
+</html>

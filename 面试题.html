@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    //--20-------------------------
+   var num = 10;
+   fn1();
+   function fn1() {
+       console.log(num);//undefined
+       var num = 20;
+   }
+
+
+
+    //  ----20-----
+   var a = 18;
+   fn2();
+   function fn2() {
+       var b = 9;
+       console.log(a);//undefined
+       console.log(b);//9
+       var a = '123';
+   }
+
+
+    //  ---20
+   var name3 = "zs";
+   function f3() {
+       var name3 = "ls";
+
+       function f4() {
+           name3 = "ww";
+       }
+       f4();
+       console.log(name3);//ww
+   }
+   f3();
+   console.log(name3);//zs
+
+
+
+    fn3();
+    console.log(c);//9
+    console.log(b);//9
+    console.log(a);//报错
+    function fn3() {
+        var a = b = c = 9;
+        console.log(a);//9
+        console.log(b);//9
+        console.log(c);//9
+    }
+
+
+
+
+  /* var a = 1;
+   function fn() {
+       console.log(a);
+
+   }*/
+
+
+</script>
+</body>
+</html>
