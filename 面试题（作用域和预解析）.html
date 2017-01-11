@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+        for(var i=0; i<10; i++){
+            window.setTimeout(function () {
+                console.log(i);//10次10
+            },100)
+        }
+
+        console.log(i);//10
+
+        var foo = 1, bar = 2,j,text;
+
+        text = function (j) {
+            j = 5;
+            var bar = 5;
+            foo = 5;
+        }
+        text(10);
+
+        console.log(foo);//5
+        console.log(bar);//2
+        console.log(j);//undefined
+      /* 注意：定时器setTimeout要等主程序完成之后  最后执行！
+	   所以上面的依次打印为
+	   10  5   2   undefined   10次10
+		在函数体内 没有声明的变量并赋值，是全局变量！函数内部若找不到，就要往上一级函数外找对应的值！即作用域！
+		函数外部的不能访问函数内部的！！！
+
+      */
+</script>
+
+<script>
+
+//     var foo,bar,j,text,i;
+
+//    for(i=0; i<10; i++){
+//        window.setTimeout(function () {
+//            console.log(i)
+//        },100)
+//    }
+
+//    console.log(i);
+//
+//    foo = 1;
+//    bar = 2;
+//    text = function (j) {
+//        j = 5;
+//        var bar = 5;
+//        foo = 5;
+//    }
+//    text(10);
+//
+//    console.log(foo);
+//    console.log(bar);
+//    console.log(j);
+
+
+</script>
+</body>
+</html>
